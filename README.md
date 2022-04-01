@@ -1,4 +1,4 @@
-# ipfs-image-upload deploy Binance smartchain
+# IPFS-Image-Upload Deploy Binance Smartchain
 
 final year project
 

@@ -1,5 +1,8 @@
 # ipfs-image-dapp
 
+# URL
+https://6246a7a4e994054b435eb788--snazzy-nasturtium-f1742d.netlify.app/
+
 ## Overview
 
 IPFS and the Blockchain are a perfect match. Why? You can address large amounts of data with IPFS and place the immutable, permanent IPFS links into a blockchain transaction. This will timestamp and secure your content, without having to put the data on the chain itself. You now have undisputable proof that your image existed at that time it was uploaded.
@@ -225,8 +228,8 @@ Steps to deploy our smart contract directly from Truffle with Infura to the Rink
     ```
 3.  Update the .env file with your MetaMask mnenomic and Infura API Key
     ```javascript
-    MNENOMIC = '<Your MetaMask recovery words>'
-    INFURA_API_KEY = '<Your Infura API Key after its registration>'
+    MNENOMIC = '<Your MetaMask recovery words>';
+    INFURA_API_KEY = '<Your Infura API Key after its registration>';
     ```
 4.  Deploy to Rinkeby with `truffle migrate --reset --compile-all --network rinkeby`
 
@@ -268,11 +271,11 @@ Check out the awesome tutorial [Deploy Your Smart Contract Directly from Truffle
 - Are you using your custom RPC network in MetaMask?
 - If MetaMask can't find your RPC network, try switching to the Rinkeby Test Network and back.
 - Did you `truffle compile` and `truffle migrate` whenever starting your local network or making changes to your smart contract?
-- Transaction error? 
+- Transaction error?
   - Try resetting the MetaMask account you created under settings.
-- Is `truffle migrate` showing stale settings? 
+- Is `truffle migrate` showing stale settings?
   - Try `truffle migrate --reset`
-- Images do not appear right away? 
+- Images do not appear right away?
   - Have noticed on Mac that ganache-cli may drop transactions. Try using the Ganache app instead.
   - If you are using the Rinkeby TestNet, it may take up to a minute before the transaction is mined.
 
@@ -311,61 +314,65 @@ This project uses [Bootstrap 4](https://getbootstrap.com/).
 
 MIT
 
- // "babel-core": "6.26.0",
-    // "babel-jest": "20.0.3",
-    // "babel-loader": "7.1.2",
-    // "babel-preset-react-app": "^3.1.1",
-    // "babel-runtime": "6.26.0",
+// "babel-core": "6.26.0",
+// "babel-jest": "20.0.3",
+// "babel-loader": "7.1.2",
+// "babel-preset-react-app": "^3.1.1",
+// "babel-runtime": "6.26.0",
 
     1_initial_migration.js
+
 ======================
 
-   Deploying 'Migrations'
-   ----------------------
-   > transaction hash:    0xd1357a4c7f8721de1434c1e227665307a34c4bc08c49c2a3fcf5d270035182f1
-   > Blocks: 0            Seconds: 0
-   > contract address:    0x732afd7d45545fc96fdBD111b84A550D5cE24174
-   > block number:        24
-   > block timestamp:     1648791863
-   > account:             0x8c925DD848C8976650F0FF57e3C6B209349Ca983
-   > balance:             99.90176238
-   > gas used:            238594 (0x3a402)
-   > gas price:           20 gwei
-   > value sent:          0 ETH
-   > total cost:          0.00477188 ETH
+Deploying 'Migrations'
 
+---
 
-   > Saving migration to chain.
-   > Saving artifacts
-   -------------------------------------
-   > Total cost:          0.00477188 ETH
+> transaction hash: 0xd1357a4c7f8721de1434c1e227665307a34c4bc08c49c2a3fcf5d270035182f1
+> Blocks: 0 Seconds: 0
+> contract address: 0x732afd7d45545fc96fdBD111b84A550D5cE24174
+> block number: 24
+> block timestamp: 1648791863
+> account: 0x8c925DD848C8976650F0FF57e3C6B209349Ca983
+> balance: 99.90176238
+> gas used: 238594 (0x3a402)
+> gas price: 20 gwei
+> value sent: 0 ETH
+> total cost: 0.00477188 ETH
 
+> Saving migration to chain.
+> Saving artifacts
 
-2_deploy_contracts.js
-=====================
+---
 
-   Deploying 'ImageRegister'
-   -------------------------
-   > transaction hash:    0xbf39370f9544ca58e8798f72f61ba5adb9c123e9e7eecabcd50609625c2e24df
-   > Blocks: 0            Seconds: 0
-   > contract address:    0x980953FDE9C6Dc0c71e670a5A8c0A132169798FC
-   > block number:        26
-   > block timestamp:     1648791869
-   > account:             0x8c925DD848C8976650F0FF57e3C6B209349Ca983
-   > balance:             99.87299388
-   > gas used:            1396077 (0x154d6d)
-   > gas price:           20 gwei
-   > value sent:          0 ETH
-   > total cost:          0.02792154 ETH
+> Total cost: 0.00477188 ETH
 
+# 2_deploy_contracts.js
 
-   > Saving migration to chain.
-   > Saving artifacts
-   -------------------------------------
-   > Total cost:          0.02792154 ETH
+Deploying 'ImageRegister'
 
+---
 
-Summary
-=======
-> Total deployments:   2
-> Final cost:          0.03269342 ETH
+> transaction hash: 0xbf39370f9544ca58e8798f72f61ba5adb9c123e9e7eecabcd50609625c2e24df
+> Blocks: 0 Seconds: 0
+> contract address: 0x980953FDE9C6Dc0c71e670a5A8c0A132169798FC
+> block number: 26
+> block timestamp: 1648791869
+> account: 0x8c925DD848C8976650F0FF57e3C6B209349Ca983
+> balance: 99.87299388
+> gas used: 1396077 (0x154d6d)
+> gas price: 20 gwei
+> value sent: 0 ETH
+> total cost: 0.02792154 ETH
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.02792154 ETH
+
+# Summary
+
+> Total deployments: 2
+> Final cost: 0.03269342 ETH

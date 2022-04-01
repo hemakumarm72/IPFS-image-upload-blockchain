@@ -8,6 +8,10 @@ architecture - Reactjs Frontend application, Binance(BNB) testnet, metamask, IPF
 
 https://snazzy-nasturtium-f1742d.netlify.app/
 
+# purchase new domain
+
+https://www.ipfsuploader.tech/
+
 # Testnet blockchain infrastructure model
 
 decentrilzation stored mete data, image, important document image and privacy all

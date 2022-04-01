@@ -6,7 +6,7 @@ architecture - Reactjs Frontend application, Binance(BNB) testnet, metamask, IPF
 
 # URL
 
-https://6246a7a4e994054b435eb788--snazzy-nasturtium-f1742d.netlify.app/
+https://snazzy-nasturtium-f1742d.netlify.app/
 
 # Testnet blockchain infrastructure model
 

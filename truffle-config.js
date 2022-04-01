@@ -89,7 +89,7 @@ module.exports = {
     ropsten: {
       provider: () => new HDWalletProvider(
         process.env.MNENOMIC,
-        'https://ropsten.infura.io/v3/f81b8cd21fc34065a56eb8a3936c5145',
+        'https://ropsten.infura.io/v3/6a89a4fa89b34ae58139f4d04134bd05',
       ),
       network_id: 3,
       gas: 3000000,
@@ -101,13 +101,13 @@ module.exports = {
     //   gas: 3000000,
     //   gasPrice: 10000000000,
     // },
-    // testnet: {
-    //   provider: () => new HDWalletProvider(process.env.MNENOMIC, 'https://data-seed-prebsc-1-s1.binance.org:8545'),
-    //   network_id: 97,
-    //   confirmations: 10,
-    //   timeoutBlocks: 200,
-    //   skipDryRun: true,
-    // },
+    testnet: {
+      provider: () => new HDWalletProvider(process.env.MNENOMIC, 'https://data-seed-prebsc-1-s1.binance.org:8545'),
+      network_id: 97,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+    },
     // bsc: {
     //   provider: () => new HDWalletProvider(process.env.MNENOMIC, 'https://bsc-dataseed1.binance.org'),
     //   network_id: 56,

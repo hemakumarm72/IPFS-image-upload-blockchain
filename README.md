@@ -1,6 +1,27 @@
-# ipfs-image-dapp
+# ipfs-image-dapp connect Binance smartchain deploy ipfs project
+
+decentrilzation stored mete data, image, important document image and privacy all
+they secure store use upload image required BNB token for testnet
+
+testnet link
+
+install doc setup project
+https://github.com/ChainSafe/web3.js for install web3js config reactjs
+
+# FaucetBNB
+
+     claim link: https://testnet.binance.org/faucet-smart
+
+# Metamask config
+
+      network name = Binane testnet
+      New RPC URL = https://data-seed-prebsc-1-s1.binance.org:8545/
+      Chain ID = 97
+      Currency Symbol = BNB
+      Block Explorer URL = https://testnet.bscscan.com
 
 # URL
+
 https://6246a7a4e994054b435eb788--snazzy-nasturtium-f1742d.netlify.app/
 
 ## Overview
@@ -324,6 +345,8 @@ MIT
 
 ======================
 
+# development
+
 Deploying 'Migrations'
 
 ---
@@ -376,3 +399,203 @@ Deploying 'ImageRegister'
 
 > Total deployments: 2
 > Final cost: 0.03269342 ETH
+
+# ropsten deploy
+
+# Migrations dry-run (simulation)
+
+> Network name: 'ropsten-fork'
+> Network id: 3
+> Block gas limit: 8000000 (0x7a1200)
+
+# 1_initial_migration.js
+
+Replacing 'Migrations'
+
+---
+
+> block number: 12153828
+> block timestamp: 1648803147
+> account: 0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
+> balance: 1.958963271473622632
+> gas used: 223594 (0x3696a)
+> gas price: 10 gwei
+> value sent: 0 ETH
+> total cost: 0.00223594 ETH
+
+---
+
+> Total cost: 0.00223594 ETH
+
+# 2_deploy_contracts.js
+
+Replacing 'ImageRegister'
+
+---
+
+> block number: 12153830
+> block timestamp: 1648803170
+> account: 0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
+> balance: 1.944987021473622632
+> gas used: 1370277 (0x14e8a5)
+> gas price: 10 gwei
+> value sent: 0 ETH
+> total cost: 0.01370277 ETH
+
+---
+
+> Total cost: 0.01370277 ETH
+
+# Summary
+
+> Total deployments: 2
+> Final cost: 0.01593871 ETH
+
+# Starting migrations...
+
+> Network name: 'ropsten'
+> Network id: 3
+> Block gas limit: 8000000 (0x7a1200)
+
+# 1_initial_migration.js
+
+Replacing 'Migrations'
+
+---
+
+> transaction hash: 0x6ce1049ce8b315c251098cb51601a264dc7993e98dc206e640288c0c6717fa72
+> Blocks: 1 Seconds: 37
+> contract address: 0x61fB9B88F37CAA8c599C86c971e738c1ab118bF4
+> block number: 12153829
+> block timestamp: 1648803175
+> account: 0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
+> balance: 1.958800271473622632
+> gas used: 239894 (0x3a916)
+> gas price: 10 gwei
+> value sent: 0 ETH
+> total cost: 0.00239894 ETH
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.00239894 ETH
+
+# 2_deploy_contracts.js
+
+Replacing 'ImageRegister'
+
+---
+
+> transaction hash: 0xce682c39bc91546409efd843c7bb4c348227f511949cfb17315e841b7b6a85c9
+> Blocks: 1 Seconds: 21
+> contract address: 0x3C331052b5c7016A321e802902b1956840e29Fa2
+> block number: 12153832
+> block timestamp: 1648803235
+> account: 0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
+> balance: 1.944363021473622632
+> gas used: 1397977 (0x1554d9)
+> gas price: 10 gwei
+> value sent: 0 ETH
+> total cost: 0.01397977 ETH
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.01397977 ETH
+
+# Summary
+
+> Total deployments: 2
+> Final cost: 0.01637871 ETH
+
+# Binance deploy
+
+# Starting migrations...
+
+> Network name: 'testnet'
+> Network id: 97
+> Block gas limit: 30000000 (0x1c9c380)
+
+# 1_initial_migration.js
+
+Deploying 'Migrations'
+
+---
+
+> transaction hash: 0x07cc6b69a6ff69b8118e993d728e1c7a68e7b65fea43baefa38e2367f02d8720
+> Blocks: 3 Seconds: 9
+> contract address: 0xD8381221EFa382F46AB6fcaE1186Ca1AEC97a6C2
+> block number: 18065667
+> block timestamp: 1648803990
+> account: 0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
+> balance: 0.99761406
+> gas used: 238594 (0x3a402)
+> gas price: 10 gwei
+> value sent: 0 ETH
+> total cost: 0.00238594 ETH
+
+Pausing for 10 confirmations...
+
+---
+
+> confirmation number: 2 (block: 18065670)
+> confirmation number: 3 (block: 18065671)
+> confirmation number: 4 (block: 18065672)
+> confirmation number: 6 (block: 18065674)
+> confirmation number: 7 (block: 18065675)
+> confirmation number: 8 (block: 18065676)
+> confirmation number: 10 (block: 18065678)
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.00238594 ETH
+
+# 2_deploy_contracts.js
+
+Deploying 'ImageRegister'
+
+---
+
+> transaction hash: 0x75d16422a06ca712918bbc84e3a647070f3086fb40caaec58db72dd24fbaff29
+> Blocks: 3 Seconds: 9
+> contract address: 0x1F03fEB489b31A284C648261559AD84362037E0C
+> block number: 18065686
+> block timestamp: 1648804047
+> account: 0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
+> balance: 0.98322981
+> gas used: 1396077 (0x154d6d)
+> gas price: 10 gwei
+> value sent: 0 ETH
+> total cost: 0.01396077 ETH
+
+Pausing for 10 confirmations...
+
+---
+
+> confirmation number: 1 (block: 18065689)
+> confirmation number: 3 (block: 18065691)
+> confirmation number: 4 (block: 18065692)
+> confirmation number: 5 (block: 18065693)
+> confirmation number: 6 (block: 18065694)
+> confirmation number: 8 (block: 18065696)
+> confirmation number: 9 (block: 18065697)
+> confirmation number: 10 (block: 18065698)
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.01396077 ETH
+
+# Summary
+
+> Total deployments: 2
+> Final cost: 0.01634671 ETH

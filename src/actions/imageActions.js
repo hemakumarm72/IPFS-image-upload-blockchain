@@ -30,7 +30,7 @@ export const getImages = () => async (dispatch, getState) => {
         from: web3State.account,
       },
     );
-    console.log(count);
+    //  console.log(count);
     const imageCount = count.toNumber();
 
     for (let index = 0; index < imageCount; index++) {

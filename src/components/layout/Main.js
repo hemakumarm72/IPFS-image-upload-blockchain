@@ -29,6 +29,9 @@ class Layout extends Component {
 
     return (
       <main role="main">
+
+        <title>IPFS Uploader</title>
+
         <div>{renderItems}</div>
       </main>
     );

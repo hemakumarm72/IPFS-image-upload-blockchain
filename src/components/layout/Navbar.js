@@ -12,19 +12,20 @@ class Navbar extends Component {
                 <h4 className="text-white">About</h4>
                 <p className="text-white">Proof of Digital Existence</p>
                 <p className="text-muted">
-                  IPFS and the Blockchain are a perfect match. Why? You can
-                  address large amounts of data with IPFS, and place the
-                  immutable, permanent IPFS links into a blockchain transaction.
-                  This will timestamp and secure your content, without having to
-                  put the data on the chain itself. You now have undisputable
-                  proof that your image existed at that time it was uploaded.
-                  Awesome, right?
+                  how to ensure that the data sharing process is safe,
+                  transparent, and fair? Therefore, we propose data
+                  producing, data storing, and data sharing schemas.
+                  In the data producing schema, we deploy a group signature
+                  scheme for a group of reputable organizations
+                  that provide the same type of service, an organization in the
+                  group generates a valuable digital data from raw data sent from a
+                  data owner and then issues a certificate
+                  on the ciphertext of this digital data.
+                  In the data storing schema, the data owner uploads his/her data to
+                  the public Inter-Planetary
+                  File System network and then stores the access address of the stored data and
+                  the corresponding certificate on the blockchain ledger.
                 </p>
-                <div className="copyright text-white mt-3">
-                  <p className="mbr-text mbr-fonts-style display-7">
-                    © Copyright 2018 Bulldogs R Us - All Rights Reserved
-                  </p>
-                </div>
               </div>
               <div className="col-sm-4 offset-md-1 py-4">
                 <h4 className="text-white">For more information</h4>
@@ -55,10 +56,10 @@ class Navbar extends Component {
                   </li>
                   <li>
                     <a
-                      href="https://en.wikipedia.org/wiki/InterPlanetary_File_System"
+                      href="https://ieeexplore.ieee.org/abstract/document/9499074"
                       className="text-white"
                     >
-                      InterPlanetary File System
+                      A Reliability Guaranteed Solution for Data Storing and Sharing
                     </a>
                   </li>
                 </ul>
@@ -85,7 +86,7 @@ class Navbar extends Component {
                 <circle cx="12" cy="13" r="4" />
               </svg>
               <strong>
-                IPFS Image Upload dApp with Ethereum Smart Contracts
+                Blockchain-based Decentralized Storage System with IPFS
               </strong>
             </Link>
             <button

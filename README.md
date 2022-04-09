@@ -17,7 +17,7 @@ https://www.ipfsuploader.tech/
 decentrilzation stored mete data, image, important document image and privacy all
 they secure store use upload image required BNB token for testnet
 
-testnet link
+# Reactjs web config
 
 install doc setup project
 https://github.com/ChainSafe/web3.js for install web3js config reactjs
@@ -34,6 +34,33 @@ https://github.com/ChainSafe/web3.js for install web3js config reactjs
       Currency Symbol = BNB
       Block Explorer URL = https://testnet.bscscan.com
 
+![IPFS-image-upload-blockchain](./src/assets/screenshots/meta-add-network.jpg?raw=true 'IPFS-image-upload-blockchain')
+
+Click the Add Network
+
+step-2
+
+open new tab automatically fill network name
+
+![IPFS-image-upload-blockchain](./src/assets/screenshots/metamask-add-new-network.jpg?raw=true 'IPFS-image-upload-blockchain')
+
+step-3
+copy and paste
+
+![IPFS-image-upload-blockchain](./src/assets/screenshots/metamask-conmfig-add-type.jpg?raw=true 'IPFS-image-upload-blockchain')
+
+after save button
+
+step-4
+
+finial choose testnet
+
+![IPFS-image-upload-blockchain](./src/assets/screenshots/meta-config.jpg?raw=true 'IPFS-image-upload-blockchain')
+
+after reload again application press F2
+
+<h1>automated connect wallet and application </h1>
+
 ## Overview
 
 IPFS and the Blockchain are a perfect match. Why? You can address large amounts of data with IPFS and place the immutable, permanent IPFS links into a blockchain transaction. This will timestamp and secure your content, without having to put the data on the chain itself. You now have undisputable proof that your image existed at that time it was uploaded.
@@ -46,13 +73,13 @@ This project is an Ethereum Decentralized Application (dApp) using React, Redux,
 
 In this application, the main page displays a list of image cards filtered by owner i.e. MetaMask account. Each image card displays the image, title, description, tags, upload timestamp and IPFS hash.
 
-![IPFS Image dApp](./src/assets/screenshots/app.png?raw=true 'IPFS Image dApp')
+![IPFS-image-upload-blockchain](./src/assets/screenshots/app.png?raw=true 'IPFS-image-upload-blockchain')
 
 ### Upload an Image
 
 Click _Upload Image_ to upload an image to IPFS and the blockchain. You are required to enter an image title, optional description and appropriate tags. Click _Upload_ to submit.
 
-![IPFS Image dApp](./src/assets/screenshots/upload-image.png?raw=true 'Upload Image')
+![IPFS-image-upload-blockchain](./src/assets/screenshots/upload-image.png?raw=true 'Upload Image')
 
 <strong>Note</strong>: You can find sample images in the `assets/sample-images` folder.
 
@@ -62,7 +89,7 @@ Click _Details_ to view the image and blockchain transaction details.
 
 <strong>Note</strong>: The current version of the application does not persist the blockchain transaction information in a permanent store such as MongoDB or PostgreSQL. Instead, we chose to store it in browser local storage keyed by the account address so to provide a better user experience. Otherwise, this information is lost when you refresh the browser or login as another user. Keep in mind that this information is transient when running Ganache. Be sure to clear local storage before restarting the app by following these [instructions](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#local-storage).
 
-![IPFS Image dApp](./src/assets/screenshots/view-details.png?raw=true 'View Details')
+![IPFS-image-upload-blockchain](./src/assets/screenshots/view-details.png?raw=true 'View Details')
 
 ## Our stack
 
@@ -143,7 +170,7 @@ For this project, we used the following stack:
     - Create and connect to a custom RPC network using the Ganache RPC server (currently `http://127.0.0.1:8545`), then
     - Import a new account and use the account seed phrase provided by Ganache
 
-      ![IPFS Image dApp](./src/assets/screenshots/metamask-choose-network.png?raw=true 'MetaMask Choose Network')
+      ![IPFS-image-upload-blockchain](./src/assets/screenshots/metamask-choose-network.png?raw=true 'MetaMask Choose Network')
 
 ## Testing
 

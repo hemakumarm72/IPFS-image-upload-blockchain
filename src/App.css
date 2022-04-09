@@ -9,6 +9,10 @@
 .text-box {
   color: rgba(245, 245, 245, 0.692);
 }
+.jumbotron {
+  background-image: url('../src/assets/images/connected-png-2.png');
+  background-position: 20px 10px 10px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

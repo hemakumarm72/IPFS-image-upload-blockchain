@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { web3Connect } from '../../actions/web3Actions';
 import Spinner from '../common/Spinner';
+import Setup from './Setup';
 
 class Layout extends Component {
   componentDidMount() {
@@ -18,10 +19,19 @@ class Layout extends Component {
       renderItems = <Spinner />;
     } else if (error) {
       renderItems = (
-        <div className="alert alert-danger" role="alert">
-          <p>Oops! An error ocurred.</p>
-          <div>{error}</div>
-        </div>
+        <>
+          <div className="alert alert-danger" role="alert">
+            <p>Oops! An error ocurred.</p>
+            <div>
+
+              {error}
+
+            </div>
+          </div>
+          <div>
+            <Setup />
+          </div>
+        </>
       );
     } else {
       renderItems = this.props.children;

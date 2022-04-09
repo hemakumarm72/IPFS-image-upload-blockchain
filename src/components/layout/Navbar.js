@@ -11,7 +11,7 @@ class Navbar extends Component {
               <div className="col-sm-8 col-md-7 py-4">
                 <h4 className="text-white">About</h4>
                 <p className="text-white">Proof of Digital Existence</p>
-                <p className="text-muted">
+                <p className="text-box">
                   how to ensure that the data sharing process is safe,
                   transparent, and fair? Therefore, we propose data
                   producing, data storing, and data sharing schemas.

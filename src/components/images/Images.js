@@ -50,7 +50,7 @@ class Images extends Component {
           <div className="container">
             <h1 className="jumbotron-heading">Images</h1>
             <p className="lead text-muted">
-              Upload images to IPFS and store the IPFS hash on the Ethereum
+              Upload images to IPFS and store the IPFS hash on the Binance
               Blockchain.
             </p>
             <p>

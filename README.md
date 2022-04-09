@@ -22,10 +22,6 @@ they secure store use upload image required BNB token for testnet
 install doc setup project
 https://github.com/ChainSafe/web3.js for install web3js config reactjs
 
-# FaucetBNB
-
-     claim link: https://testnet.binance.org/faucet-smart
-
 # Metamask config
 
       network name = Binane testnet
@@ -60,6 +56,28 @@ finial choose testnet
 after reload again application press F2
 
 <h1>automated connect wallet and application </h1>
+
+# FaucetBNB
+
+     claim link: https://testnet.binance.org/faucet-smart
+
+    add BNB testdomain
+
+    go site  https://testnet.binance.org/faucet-smart
+
+![IPFS-image-upload-blockchain](./src/assets/screenshots/bnb-claim.jpg?raw=true 'IPFS-image-upload-blockchain')
+
+copy you wallet address after paste that site
+
+after click Give me BNB
+
+![IPFS-image-upload-blockchain](./src/assets/screenshots/bnb-claim-metamask.jpg?raw=true 'IPFS-image-upload-blockchain')
+
+few minute after fill 1 BNB add you wallet
+
+# Example Wallet
+
+![IPFS-image-upload-blockchain](./src/assets/screenshots/bnb-add.jpg?raw=true 'IPFS-image-upload-blockchain')
 
 ## Overview
 

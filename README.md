@@ -17,7 +17,7 @@ https://www.ipfsuploader.tech/
 decentrilzation stored mete data, image, important document image and privacy all
 they secure store use upload image required BNB token for testnet
 
-# Reactjs web config
+# Reactjs web3js config
 
 install doc setup project
 https://github.com/ChainSafe/web3.js for install web3js config reactjs

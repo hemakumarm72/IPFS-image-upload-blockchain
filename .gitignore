@@ -67,3 +67,5 @@ typings/
 
 
 
+# package 
+.package-lock.json

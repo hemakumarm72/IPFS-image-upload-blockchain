@@ -247,49 +247,6 @@ Shutting down testrpc-sc (pid 94037)
 Done.
 ```
 
-## Deploy to Rinkeby TestNet
-
-Steps to deploy our smart contract directly from Truffle with Infura to the Rinkeby TestNet.
-
-1.  Get an [Infura](https://infura.io/) API key. You can sign up for [free](https://infura.io/signup).
-2.  Create a .env file in the root directory if it doesn't exist
-    ```bash
-    cd ipfs-image-dapp
-    touch .env
-    ```
-3.  Update the .env file with your MetaMask mnenomic and Infura API Key
-    ```javascript
-    MNENOMIC = '<Your MetaMask recovery words>';
-    INFURA_API_KEY = '<Your Infura API Key after its registration>';
-    ```
-4.  Deploy to Rinkeby with `truffle migrate --reset --compile-all --network rinkeby`
-
-    ```bash
-    $ truffle migrate --reset --compile-all --network rinkeby
-    Compiling ./contracts/ImageRegister.sol...
-    Compiling ./contracts/Migrations.sol...
-    Compiling openzeppelin-solidity/contracts/lifecycle/Destructible.sol...
-    Compiling openzeppelin-solidity/contracts/ownership/Ownable.sol...
-    Writing artifacts to ./build/contracts
-
-    Using network 'rinkeby'.
-
-    Running migration: 1_initial_migration.js
-      Deploying Migrations...
-      ... 0xb2d3cebfca0c1a2e0d271c07740112460d82ce4469ba14d7b92f9993314af50c
-      Migrations: 0x4ed3265ed135a4c85669f32ca662bd2aba3e5db3
-    Saving successful migration to network...
-      ... 0xde1d86d1efbeae9d086e0d1d170a20bbe1f570e92816d231265874f2a8afe556
-    Saving artifacts...
-    Running migration: 2_deploy_contracts.js
-      Deploying ImageRegister...
-      ... 0xcfbe99781c8c0cd77dd208eb445b2c12381704441e3827b2308a88d9c9b29079
-      ImageRegister: 0x107aaa697293b44376de69ad4b87579e3b1e50d8
-    Saving successful migration to network...
-      ... 0x46ad7dbe55f412a55c76e48bf7553603c0826a19cda92f45f319699b8eb5a203
-    Saving artifacts...
-    ```
-
 5.  Run the application as described above.
 
 Check out the awesome tutorial [Deploy Your Smart Contract Directly from Truffle with Infura](https://medium.com/coinmonks/deploy-your-smart-contract-directly-from-truffle-with-infura-ba1e1f1d40c2) by Hyungsuk Kang.
@@ -357,6 +314,7 @@ MIT
 
 # development
 
+```bash
 Deploying 'Migrations'
 
 ---
@@ -609,3 +567,5 @@ Pausing for 10 confirmations...
 
 > Total deployments: 2
 > Final cost: 0.01634671 ETH
+
+```

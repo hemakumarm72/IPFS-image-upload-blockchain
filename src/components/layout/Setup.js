@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './Setup.css';
 
 class Setup extends Component {
   render() {
     return (
       <div className="container">
-        <p>df</p>
+        <p>Setup and Installage Pages </p>
       </div>
     );
   }

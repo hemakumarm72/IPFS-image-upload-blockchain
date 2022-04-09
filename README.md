@@ -46,13 +46,13 @@ This project is an Ethereum Decentralized Application (dApp) using React, Redux,
 
 In this application, the main page displays a list of image cards filtered by owner i.e. MetaMask account. Each image card displays the image, title, description, tags, upload timestamp and IPFS hash.
 
-![IPFS Image dApp](../master/assets/screenshots/app.png?raw=true 'IPFS Image dApp')
+![IPFS Image dApp](./src/assets/screenshots/app.png?raw=true 'IPFS Image dApp')
 
 ### Upload an Image
 
 Click _Upload Image_ to upload an image to IPFS and the blockchain. You are required to enter an image title, optional description and appropriate tags. Click _Upload_ to submit.
 
-![IPFS Image dApp](../master/assets/screenshots/upload-image.png?raw=true 'Upload Image')
+![IPFS Image dApp](./src/assets/screenshots/upload-image.png?raw=true 'Upload Image')
 
 <strong>Note</strong>: You can find sample images in the `assets/sample-images` folder.
 
@@ -62,7 +62,7 @@ Click _Details_ to view the image and blockchain transaction details.
 
 <strong>Note</strong>: The current version of the application does not persist the blockchain transaction information in a permanent store such as MongoDB or PostgreSQL. Instead, we chose to store it in browser local storage keyed by the account address so to provide a better user experience. Otherwise, this information is lost when you refresh the browser or login as another user. Keep in mind that this information is transient when running Ganache. Be sure to clear local storage before restarting the app by following these [instructions](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#local-storage).
 
-![IPFS Image dApp](../master/assets/screenshots/view-details.png?raw=true 'View Details')
+![IPFS Image dApp](./src/assets/screenshots/view-details.png?raw=true 'View Details')
 
 ## Our stack
 
@@ -143,7 +143,7 @@ For this project, we used the following stack:
     - Create and connect to a custom RPC network using the Ganache RPC server (currently `http://127.0.0.1:8545`), then
     - Import a new account and use the account seed phrase provided by Ganache
 
-      ![IPFS Image dApp](../master/assets/screenshots/metamask-choose-network.png?raw=true 'MetaMask Choose Network')
+      ![IPFS Image dApp](./src/assets/screenshots/metamask-choose-network.png?raw=true 'MetaMask Choose Network')
 
 ## Testing
 

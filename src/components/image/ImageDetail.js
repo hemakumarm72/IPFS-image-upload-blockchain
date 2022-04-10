@@ -1,16 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { Button, Modal, Form } from 'react-bootstrap';
 import './ImageDetail.css';
 import { getImage } from '../../actions/imageActions';
 
 class ImageDetail extends Component {
+  // state = { count: 0 };
+
+  state = {
+    show: false,
+  };
+
   componentDidMount() {
     this.props.getImage(this.props.match.params.index);
   }
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+
+  handleShow = () => this.setState((prevState) => ({ show: !prevState.show }));
+
+  handleClose = () => this.setState((prevState) => ({ show: !prevState.show }));
+  // increment = () => this.setState((prevState) => ({ count: prevState.count + 1 }));
+
+  // decrement = () => this.setState((prevState) => ({ count: prevState.count - 1 }));
 
   render() {
+    // const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
+    const { show } = this.state;
+    //  const { count } = this.state;
     const image = this.props.image ? this.props.image : {};
 
     const {
@@ -41,8 +60,44 @@ class ImageDetail extends Component {
           be lost when you refresh the browser or
           login as another user.
         </div>
-        <div className="mt-3 mb-3">
+        <div className="mt-3 mb-3 group-box">
+
           <Link to="/">Go Back</Link>
+          <div className="item--collection-toolbar-wrapper">
+
+            {/* <button type="submit" className="btn btn-primary">
+              Share
+            </button> */}
+            <Button variant="primary" onClick={this.handleShow}>
+              Share
+            </Button>
+
+            <Modal show={show} onHide={this.handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Share Photos</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Form>
+                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Label>Email wallet address</Form.Label>
+                    <Form.Control
+                      placeholder="0x989.."
+                      autoFocus
+                    />
+                  </Form.Group>
+                </Form>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={this.handleClose}>
+                  Close
+                </Button>
+                <Button variant="primary" onClick={this.handleClose}>
+                  Send
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
+
         </div>
         <div className="row">
           <div className="col-md-4">

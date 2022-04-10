@@ -19,7 +19,7 @@ const onConnect = async () => {
     // Use Mist/MetaMask's provider.
     web3 = new Web3(Web3.givenProvider || bsctestnet);
     const accounts = await web3.eth.requestAccounts();
-    console.log(accounts[0]);
+    // console.log(accounts[0]);
     console.log('Injected web3 detected.');
   } else {
     // Fallback to localhost if no web3 injection. We've configured this to

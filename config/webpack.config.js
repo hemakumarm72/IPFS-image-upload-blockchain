@@ -1,6 +1,6 @@
-const path = require('path')
-const webpack = require('webpack')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -15,7 +15,7 @@ module.exports = {
     new webpack.IgnorePlugin({
       checkResource(resource) {
         // "@ethereumjs/common/genesisStates" consists ~800KB static files which are no more needed
-        return /(.*\/genesisStates\/.*\.json)/.test(resource)
+        return /(.*\/genesisStates\/.*\.json)/.test(resource);
       },
     }),
   ],
@@ -60,4 +60,4 @@ module.exports = {
     library: 'Web3',
     libraryTarget: 'umd',
   },
-}
+};

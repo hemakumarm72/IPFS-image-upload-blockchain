@@ -36,7 +36,6 @@ class ImageDetail extends Component {
     const {
       sendAddress, ipfsHash, title, description, tags,
     } = this.state;
-    console.log(sendAddress, ipfsHash, title, description, tags);
     try {
       await this.props.sharedImage(
         sendAddress,

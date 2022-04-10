@@ -357,7 +357,7 @@ MIT
 
 ======================
 
-# development
+# development deploy
 
 ```bash
 Deploying 'Migrations'
@@ -412,9 +412,11 @@ Deploying 'ImageRegister'
 
 > Total deployments: 2
 > Final cost: 0.03269342 ETH
+```
 
 # ropsten deploy
 
+```
 # Migrations dry-run (simulation)
 
 > Network name: 'ropsten-fork'
@@ -524,9 +526,11 @@ Replacing 'ImageRegister'
 
 > Total deployments: 2
 > Final cost: 0.01637871 ETH
+```
 
 # Binance deploy
 
+```
 # Starting migrations...
 
 > Network name: 'testnet'
@@ -539,78 +543,84 @@ Deploying 'Migrations'
 
 ---
 
-> transaction hash: 0x07cc6b69a6ff69b8118e993d728e1c7a68e7b65fea43baefa38e2367f02d8720
-> Blocks: 3 Seconds: 9
-> contract address: 0xD8381221EFa382F46AB6fcaE1186Ca1AEC97a6C2
-> block number: 18065667
-> block timestamp: 1648803990
-> account: 0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
-> balance: 0.99761406
-> gas used: 238594 (0x3a402)
-> gas price: 10 gwei
-> value sent: 0 ETH
-> total cost: 0.00238594 ETH
 
-Pausing for 10 confirmations...
+Starting migrations...
+======================
+> Network name:    'testnet'
+> Network id:      97
+> Block gas limit: 30000000 (0x1c9c380)
 
----
 
-> confirmation number: 2 (block: 18065670)
-> confirmation number: 3 (block: 18065671)
-> confirmation number: 4 (block: 18065672)
-> confirmation number: 6 (block: 18065674)
-> confirmation number: 7 (block: 18065675)
-> confirmation number: 8 (block: 18065676)
-> confirmation number: 10 (block: 18065678)
+1_initial_migration.js
+======================
 
-> Saving migration to chain.
-> Saving artifacts
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xfcafcda4bf445e959677e9ca489dca4b53521f0f2953d83d2f39ac7f7b135a33
+   > Blocks: 3            Seconds: 9
+   > contract address:    0xD81341e96a567aaDD9b748E2F123b2B28e610c05
+   > block number:        18326191
+   > block timestamp:     1649585651
+   > account:             0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
+   > balance:             3.96626337
+   > gas used:            238594 (0x3a402)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00238594 ETH
 
----
+   Pausing for 10 confirmations...
+   -------------------------------
+   > confirmation number: 2 (block: 18326194)
+   > confirmation number: 3 (block: 18326195)
+   > confirmation number: 5 (block: 18326197)
+   > confirmation number: 6 (block: 18326198)
+   > confirmation number: 7 (block: 18326199)
+   > confirmation number: 8 (block: 18326200)
+   > confirmation number: 10 (block: 18326202)
 
-> Total cost: 0.00238594 ETH
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00238594 ETH
 
-# 2_deploy_contracts.js
 
-Deploying 'ImageRegister'
+2_deploy_contracts.js
+=====================
 
----
+   Deploying 'ImageRegister'
+   -------------------------
+   > transaction hash:    0xe889bc56b937f1505cfb8609ca3bf1b69f661ec1b70f7a9c6c2f67ddcf0d755e
+   > Blocks: 3            Seconds: 9
+   > contract address:    0x61fB9B88F37CAA8c599C86c971e738c1ab118bF4
+   > block number:        18326210
+   > block timestamp:     1649585708
+   > account:             0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
+   > balance:             3.94901569
+   > gas used:            1682420 (0x19abf4)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0168242 ETH
 
-> transaction hash: 0x75d16422a06ca712918bbc84e3a647070f3086fb40caaec58db72dd24fbaff29
-> Blocks: 3 Seconds: 9
-> contract address: 0x1F03fEB489b31A284C648261559AD84362037E0C
-> block number: 18065686
-> block timestamp: 1648804047
-> account: 0x8a8D25de5187CFEfe8FbafE2517A1cCbeA35E030
-> balance: 0.98322981
-> gas used: 1396077 (0x154d6d)
-> gas price: 10 gwei
-> value sent: 0 ETH
-> total cost: 0.01396077 ETH
+   Pausing for 10 confirmations...
+   -------------------------------
+   > confirmation number: 1 (block: 18326213)
+   > confirmation number: 3 (block: 18326215)
+   > confirmation number: 4 (block: 18326216)
+   > confirmation number: 5 (block: 18326217)
+   > confirmation number: 7 (block: 18326219)
+   > confirmation number: 8 (block: 18326220)
+   > confirmation number: 9 (block: 18326221)
+   > confirmation number: 10 (block: 18326222)
 
-Pausing for 10 confirmations...
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0168242 ETH
 
----
 
-> confirmation number: 1 (block: 18065689)
-> confirmation number: 3 (block: 18065691)
-> confirmation number: 4 (block: 18065692)
-> confirmation number: 5 (block: 18065693)
-> confirmation number: 6 (block: 18065694)
-> confirmation number: 8 (block: 18065696)
-> confirmation number: 9 (block: 18065697)
-> confirmation number: 10 (block: 18065698)
-
-> Saving migration to chain.
-> Saving artifacts
-
----
-
-> Total cost: 0.01396077 ETH
-
-# Summary
-
-> Total deployments: 2
-> Final cost: 0.01634671 ETH
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.01921014 ETH
 
 ```

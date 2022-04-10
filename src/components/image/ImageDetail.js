@@ -79,7 +79,7 @@ class ImageDetail extends Component {
               <Modal.Body>
                 <Form>
                   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Email wallet address</Form.Label>
+                    <Form.Label>wallet address</Form.Label>
                     <Form.Control
                       placeholder="0x989.."
                       autoFocus

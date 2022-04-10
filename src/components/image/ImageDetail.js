@@ -3,21 +3,59 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button, Modal, Form } from 'react-bootstrap';
 import './ImageDetail.css';
-import { getImage } from '../../actions/imageActions';
+import toastr from 'toastr';
+import { times } from 'lodash';
+import { getImage, sharedImage } from '../../actions/imageActions';
+import { ipfs } from '../../utils/ipfs';
 
 class ImageDetail extends Component {
   // state = { count: 0 };
 
   state = {
     show: false,
+    sendAddress: '',
+    ipfsHash: '',
+    title: '',
+    description: '',
+    tags: '',
   };
 
   componentDidMount() {
     this.props.getImage(this.props.match.params.index);
   }
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
+    });
+  };
+
+  handleSharedImage = async (event) => {
+    event.preventDefault();
+
+    const {
+      sendAddress, ipfsHash, title, description, tags,
+    } = this.state;
+    console.log(sendAddress, ipfsHash, title, description, tags);
+    try {
+      await this.props.sharedImage(
+        sendAddress,
+        ipfsHash,
+        title,
+        description,
+        tags,
+
+      );
+      toastr.success(
+        'Image uploaded.  It may take a while for MetaMask to respond, the transaction to be mined and the image to appear in the list.',
+      );
+    } catch (error) {
+      toastr.error(error);
+    }
+    this.setState((prevState) => ({ show: !prevState.show }));
+  };
+
+  // handleshow and handleclose there reactbootstrap
   handleShow = () => this.setState((prevState) => ({ show: !prevState.show }));
 
   handleClose = () => this.setState((prevState) => ({ show: !prevState.show }));
@@ -26,9 +64,8 @@ class ImageDetail extends Component {
   // decrement = () => this.setState((prevState) => ({ count: prevState.count - 1 }));
 
   render() {
-    // const [show, setShow] = useState(false);
-    // const [show, setShow] = useState(false);
-    const { show } = this.state;
+    const { show, sendAddress } = this.state;
+
     //  const { count } = this.state;
     const image = this.props.image ? this.props.image : {};
 
@@ -36,6 +73,7 @@ class ImageDetail extends Component {
       ipfsHash,
       title,
       description,
+      tags,
       uploadedOn,
       blockHash,
       blockNumber,
@@ -45,7 +83,13 @@ class ImageDetail extends Component {
       gasUsed,
     } = image;
 
+    this.state.ipfsHash = ipfsHash;
+    this.state.title = title;
+    this.state.description = description;
+    this.state.tags = tags;
+
     return (
+
       <div className="container">
         <div className="alert alert-info mt-3" role="alert">
           Blockchain transaction information is
@@ -78,11 +122,13 @@ class ImageDetail extends Component {
               </Modal.Header>
               <Modal.Body>
                 <Form>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                  <Form.Group className="mb-3" controlId="sendAddress">
                     <Form.Label>wallet address</Form.Label>
                     <Form.Control
+                      type="text"
+                      ref={sendAddress}
+                      onChange={this.handleChange}
                       placeholder="0x989.."
-                      autoFocus
                     />
                   </Form.Group>
                 </Form>
@@ -91,7 +137,7 @@ class ImageDetail extends Component {
                 <Button variant="secondary" onClick={this.handleClose}>
                   Close
                 </Button>
-                <Button variant="primary" onClick={this.handleClose}>
+                <Button variant="primary" type="button" onClick={this.handleSharedImage}>
                   Send
                 </Button>
               </Modal.Footer>
@@ -208,7 +254,7 @@ const mapStateToProps = (state) => ({
   image: state.image.image,
 });
 
-export default connect(mapStateToProps, { getImage })(ImageDetail);
+export default connect(mapStateToProps, { getImage, sharedImage })(ImageDetail);
 
 /*
 

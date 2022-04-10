@@ -1,4 +1,5 @@
 import { keyBy } from 'lodash';
+import { title } from 'process';
 
 import { ipfs } from '../utils/ipfs';
 
@@ -7,7 +8,9 @@ import {
   GET_IMAGES_SUCCESS,
   GET_IMAGE,
   UPLOAD_IMAGE,
+  SHARE_IMAGE,
   UPLOAD_IMAGE_SUCCESS,
+  SHARE_IMAGE_SUCCESS,
   SET_ERROR,
 } from './types';
 
@@ -64,6 +67,32 @@ export const getImages = () => async (dispatch, getState) => {
     dispatch({ type: SET_ERROR, payload: error });
   }
 };
+
+// getImagebyindex
+// export const getImagebyindex = (index) => async (dispatch, getState) => {
+//   dispatch({ type: GET_IMAGES });
+//   const web3State = getState().web3;
+//   try {
+//     const imageResult = await web3State.contractInstance.getImage.call(
+//       web3State.account,
+//       index,
+//       {
+//         from: web3State.account,
+//       },
+//     );
+//     const Image = {
+//       ipfsHash: imageResult[0],
+//       title: imageResult[1],
+//       description: imageResult[2],
+//       tags: imageResult[3],
+//     };
+//     console.log(Image);
+//   } catch (error) {
+//     console.log('error', error);
+//     dispatch({ type: SET_ERROR, payload: error });
+//   }
+// };
+// sharedImage
 
 // upload an image
 export const uploadImage = (
@@ -161,6 +190,44 @@ export const uploadImage = (
   });
 };
 
+// Shared Image
+export const sharedImage = (
+  sendAddress,
+  ipfsHash,
+  title,
+  description,
+  tags,
+) => async (dispatch, getState) => {
+  dispatch({ type: SHARE_IMAGE });
+  const web3State = getState().web3;
+  const { contractInstance } = web3State;
+  try {
+    const txReceipt = await contractInstance.shareImage(
+      sendAddress,
+      ipfsHash,
+      title,
+      description,
+      tags,
+      {
+        from: web3State.account,
+      },
+    );
+    console.log('sharedImage tx receipt', txReceipt);
+    dispatch({
+      type: SHARE_IMAGE_SUCCESS,
+      payload: txReceipt,
+    });
+  } catch (error) {
+    console.log('ERR', error);
+    dispatch({
+      type: SET_ERROR,
+      payload: {
+        error,
+      },
+    });
+    throw error;
+  }
+};
 // Get image by index
 export const getImage = (index) => ({ type: GET_IMAGE, payload: index });
 

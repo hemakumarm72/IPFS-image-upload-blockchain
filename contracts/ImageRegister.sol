@@ -4,13 +4,10 @@ pragma solidity ^0.4.24;
 // Base contract that can be destroyed by owner. 
 import "openzeppelin-solidity/contracts/lifecycle/Destructible.sol";
 
-/** 
- * @title ImageRegister
- * @author Irvin M. Waldman 
- * @notice This contract represents a registry of image ownership. 
- * Due to storage limitations, images are stored on IPFS.  
- * The IPFS hash along with metadata are stored onchain.
- */
+
+
+
+
 contract ImageRegister is Destructible {
 
     /** 
@@ -108,6 +105,42 @@ contract ImageRegister is Destructible {
 
         emit LogImageUploaded(
             msg.sender,
+            _ipfsHash,
+            _title,
+            _description,
+            _tags,
+            uploadedOn
+        );
+
+        _success = true;
+    }
+
+    function shareImage(
+        address _sendAddress,
+        string _ipfsHash, 
+        string _title, 
+        string _description, 
+        string _tags
+    ) public stopInEmergency returns (bool _success) {
+        
+        require(bytes(_ipfsHash).length == 46);
+        require(bytes(_title).length > 0 && bytes(_title).length <= 256);
+        require(bytes(_description).length < 1024);
+        require(bytes(_tags).length > 0 && bytes(_tags).length <= 256);
+
+        uint256 uploadedOn = now;
+        Image memory image = Image(
+            _ipfsHash,
+            _title,
+            _description,
+            _tags,
+            uploadedOn
+        );
+
+        ownerToImages[_sendAddress].push(image);
+
+        emit LogImageUploaded(
+            _sendAddress,
             _ipfsHash,
             _title,
             _description,

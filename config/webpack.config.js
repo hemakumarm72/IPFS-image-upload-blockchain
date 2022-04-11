@@ -2,6 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const dotenv = require('dotenv').config({ path: `${__dirname}/.env` });
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: 'production',
   entry: {
@@ -12,13 +15,17 @@ module.exports = {
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',
     }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.parsed),
+      'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production'),
+    }),
     new webpack.IgnorePlugin({
       checkResource(resource) {
         // "@ethereumjs/common/genesisStates" consists ~800KB static files which are no more needed
         return /(.*\/genesisStates\/.*\.json)/.test(resource);
       },
     }),
-  ],
+  ].filter(Boolean),
   resolve: {
     alias: {
       // To avoid blotting up the `bn.js` library all over the packages

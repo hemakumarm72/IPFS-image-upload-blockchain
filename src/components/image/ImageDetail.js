@@ -13,6 +13,7 @@ class ImageDetail extends Component {
 
   state = {
     show: false,
+    buttonDisabled: false,
     sendAddress: '',
     ipfsHash: '',
     title: '',
@@ -30,25 +31,31 @@ class ImageDetail extends Component {
     });
   };
 
+  buttonClose = () => this.setState((prevState) => ({ buttonDisabled: !prevState.buttonDisabled }));
+
   handleSharedImage = async (event) => {
     event.preventDefault();
+    this.buttonClose();
 
     const {
       sendAddress, ipfsHash, title, description, tags,
     } = this.state;
     try {
-      await this.props.sharedImage(
+      const tx = await this.props.sharedImage(
         sendAddress,
         ipfsHash,
         title,
         description,
         tags,
-
       );
+      this.buttonClose();
+      console.log('sharedImage tx receipt', tx);
+
       toastr.success(
         'Image uploaded.  It may take a while for MetaMask to respond, the transaction to be mined and the image to appear in the list.',
       );
     } catch (error) {
+      this.buttonClose();
       toastr.error(error);
     }
     this.setState((prevState) => ({ show: !prevState.show }));
@@ -63,11 +70,10 @@ class ImageDetail extends Component {
   // decrement = () => this.setState((prevState) => ({ count: prevState.count - 1 }));
 
   render() {
-    const { show, sendAddress } = this.state;
+    const { show, sendAddress, buttonDisabled } = this.state;
 
     //  const { count } = this.state;
     const image = this.props.image ? this.props.image : {};
-
     const {
       ipfsHash,
       title,
@@ -136,8 +142,9 @@ class ImageDetail extends Component {
                 <Button variant="secondary" onClick={this.handleClose}>
                   Close
                 </Button>
-                <Button variant="primary" type="button" onClick={this.handleSharedImage}>
-                  Send
+                <Button variant="primary" disabled={buttonDisabled} onClick={this.handleSharedImage}>
+
+                  {buttonDisabled ? 'sending..' : 'Send'}
                 </Button>
               </Modal.Footer>
             </Modal>

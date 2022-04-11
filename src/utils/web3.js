@@ -1,4 +1,5 @@
 import Web3 from 'web3';
+import React, { useEffect } from 'react';
 
 require('dotenv').config();
 
@@ -14,13 +15,39 @@ const ropsten = 'https://ropsten.infura.io/v3/6a89a4fa89b34ae58139f4d04134bd05';
 // Checking if Web3 has been injected by the browser (Mist/MetaMask)
 const bsctestnet = 'https://data-seed-prebsc-1-s1.binance.org:8545';
 
+window.ethereum.request({ method: 'eth_accounts' })
+  .then((accounts) => console.log(accounts))
+  .catch((error) => console.error(error));
+
 const onConnect = async () => {
   if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
     // Use Mist/MetaMask's provider.
     web3 = new Web3(Web3.givenProvider || bsctestnet);
     const accounts = await web3.eth.requestAccounts();
-    // console.log(accounts[0]);
+    // console.log(accounts);
+
     console.log('Injected web3 detected.');
+    // automated switch network
+
+    window.ethereum.request({
+      method: 'wallet_addEthereumChain',
+      params: [
+        {
+          chainId: '0x61',
+          chainName: 'Smart Chain - Testnet',
+          nativeCurrency: {
+            name: 'Binance',
+            symbol: 'BNB', // 2-6 characters long
+            decimals: 18,
+          },
+          blockExplorerUrls: ['https://testnet.bscscan.com'],
+          rpcUrls: ['https://data-seed-prebsc-2-s2.binance.org:8545'],
+        },
+      ],
+
+    });
+
+    // end
   } else {
     // Fallback to localhost if no web3 injection. We've configured this to
     // use the development console's port by default.
@@ -29,6 +56,9 @@ const onConnect = async () => {
     console.log('No web3 instance injected, using Local web3.');
   }
 };
+
 onConnect();
+
+// Update the document title using the browser API
 
 export default web3;

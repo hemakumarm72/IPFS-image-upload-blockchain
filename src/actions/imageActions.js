@@ -201,6 +201,7 @@ export const sharedImage = (
   dispatch({ type: SHARE_IMAGE });
   const web3State = getState().web3;
   const { contractInstance } = web3State;
+
   try {
     const txReceipt = await contractInstance.shareImage(
       sendAddress,
@@ -212,11 +213,14 @@ export const sharedImage = (
         from: web3State.account,
       },
     );
-    console.log('sharedImage tx receipt', txReceipt);
+
+    // console.log('sharedImage tx receipt', txReceipt);
+
     dispatch({
       type: SHARE_IMAGE_SUCCESS,
       payload: txReceipt,
     });
+    return txReceipt;
   } catch (error) {
     console.log('ERR', error);
     dispatch({

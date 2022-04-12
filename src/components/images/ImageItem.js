@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
+// import Image, { Shimmer } from 'react-shimmer';
 import './ImageItem.css';
 import { textTruncate } from '../../utils/string';
 

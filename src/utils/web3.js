@@ -15,10 +15,6 @@ const ropsten = 'https://ropsten.infura.io/v3/6a89a4fa89b34ae58139f4d04134bd05';
 // Checking if Web3 has been injected by the browser (Mist/MetaMask)
 const bsctestnet = 'https://data-seed-prebsc-1-s1.binance.org:8545';
 
-window.ethereum.request({ method: 'eth_accounts' })
-  .then((accounts) => console.log(accounts))
-  .catch((error) => console.error(error));
-
 const onConnect = async () => {
   if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
     // Use Mist/MetaMask's provider.

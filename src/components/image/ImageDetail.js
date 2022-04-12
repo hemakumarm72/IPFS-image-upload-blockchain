@@ -5,6 +5,8 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import './ImageDetail.css';
 import toastr from 'toastr';
 import { times } from 'lodash';
+import axios from 'axios';
+import fileDownload from 'js-file-download';
 import { getImage, sharedImage } from '../../actions/imageActions';
 import { ipfs } from '../../utils/ipfs';
 
@@ -33,8 +35,10 @@ class ImageDetail extends Component {
 
   buttonClose = () => this.setState((prevState) => ({ buttonDisabled: !prevState.buttonDisabled }));
 
+  // download file ipfs server
+
   handleSharedImage = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // toggle functionn true or false
     this.buttonClose();
 
     const {
@@ -48,7 +52,7 @@ class ImageDetail extends Component {
         description,
         tags,
       );
-      this.buttonClose();
+      this.buttonClose(); // toggle function true or false
       console.log('sharedImage tx receipt', tx);
 
       toastr.success(
@@ -59,6 +63,22 @@ class ImageDetail extends Component {
       toastr.error(error);
     }
     this.setState((prevState) => ({ show: !prevState.show }));
+  };
+
+  handleDownload = async (url, filename) => {
+    await axios.get(url, {
+      responseType: 'blob',
+    })
+      .then((res) => {
+        fileDownload(res.data, `${filename}.jpg`);
+      });
+  };
+
+  handleDownloadbtn = async () => {
+    const { ipfsHash, title } = this.state;
+    if (typeof ipfsHash !== 'undefined' && typeof title !== 'undefined') {
+      this.handleDownload(`https://ipfs.io/ipfs/${ipfsHash}`, title);
+    }
   };
 
   // handleshow and handleclose there reactbootstrap
@@ -179,7 +199,7 @@ class ImageDetail extends Component {
                 </p>
               </div>
             </div>
-            <p className="lead">
+            <div className="lead">
               <a
                 target="_blank"
                 href={`https://ipfs.io/ipfs/${ipfsHash}`}
@@ -189,7 +209,15 @@ class ImageDetail extends Component {
               >
                 View on IPFS
               </a>
-            </p>
+              <Button
+                variant="primary"
+                className={`btn-download ${!ipfsHash && 'disabled'} `}
+                onClick={this.handleDownloadbtn}
+              >
+                download
+              </Button>
+            </div>
+
           </div>
           <div className="col-md-8">
             <h3>IPFS Hash</h3>

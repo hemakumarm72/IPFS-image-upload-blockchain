@@ -5,8 +5,8 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import './ImageDetail.css';
 import toastr from 'toastr';
 import { times } from 'lodash';
-import axios from 'axios';
-import fileDownload from 'js-file-download';
+
+import FileSaver from 'file-saver';
 import { getImage, sharedImage } from '../../actions/imageActions';
 import { ipfs } from '../../utils/ipfs';
 
@@ -66,18 +66,13 @@ class ImageDetail extends Component {
   };
 
   handleDownload = async (url, filename) => {
-    await axios.get(url, {
-      responseType: 'blob',
-    })
-      .then((res) => {
-        fileDownload(res.data, `${filename}.jpg`);
-      });
+    FileSaver.saveAs(`https://ipfs.io/ipfs/${url}`, `${filename}.jpg`);
   };
 
   handleDownloadbtn = async () => {
     const { ipfsHash, title } = this.state;
     if (typeof ipfsHash !== 'undefined' && typeof title !== 'undefined') {
-      this.handleDownload(`https://ipfs.io/ipfs/${ipfsHash}`, title);
+      this.handleDownload(ipfsHash, title);
     }
   };
 

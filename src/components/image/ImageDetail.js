@@ -65,6 +65,7 @@ class ImageDetail extends Component {
     this.setState((prevState) => ({ show: !prevState.show }));
   };
 
+  // download file features add
   handleDownload = async (url, filename) => {
     FileSaver.saveAs(`https://ipfs.io/ipfs/${url}`, `${filename}.jpg`);
   };

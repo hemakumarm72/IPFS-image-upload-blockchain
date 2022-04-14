@@ -1,14 +1,14 @@
 import Web3 from 'web3';
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 
 require('dotenv').config();
 
 let web3;
 
 // const ganache = 'http://127.0.0.1:8545';
-const ropsten = 'https://ropsten.infura.io/v3/6a89a4fa89b34ae58139f4d04134bd05';
-// const rinkeby = 'https://rinkeby.infura.io/v3/d6ec608e9f1b451488867a6ebed6c099';
-
+const ropsten = `https://ropsten.infura.io/v3/${process.env.ropsten_key}`;
+// const rinkeby = 'https://rinkeby.infura.io/v3/${process.env.ropsten_key}';
+const polgontestnet = 'https://matic-mumbai.chainstacklabs.com';
 // BSC mainnet
 // const mainnet = 'https://bsc-dataseed1.binance.org:443';
 // BSC testnet

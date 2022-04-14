@@ -1,6 +1,6 @@
 require('dotenv').config();
-// const HDWalletProvider = require('@truffle/hdwallet-provider')
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+// const HDWalletProvider = require('truffle-hdwallet-provider');
 
 /**
  * Use this file to configure your truffle project. It's seeded with some
@@ -75,17 +75,17 @@ module.exports = {
       port: 8545,
       network_id: '*', // Match any network id
     },
-    // matic: {
-    //   provider: () => new HDWalletProvider(
-    //     process.env.MNENOMIC,
-    //     'https://matic-mumbai--jsonrpc.datahub.figment.io/apikey/bae115f9f2230c48fbd06127ea7d5599/',
-    //   ),
-    //   network_id: 80001,
-    //   confirmations: 2,
-    //   timeoutBlocks: 200,
-    //   skipDryRun: true,
-    //   networkCheckTimeout: 100000,
-    // },
+    matic: {
+      provider: () => new HDWalletProvider(
+        process.env.MNENOMIC,
+        'https://rpc-mumbai.maticvigil.com',
+      ),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+
+    },
     ropsten: {
       provider: () => new HDWalletProvider(
         process.env.MNENOMIC,

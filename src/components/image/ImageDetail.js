@@ -1,7 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Button, Modal, Form } from 'react-bootstrap';
+import {
+  Button, Modal, Form,
+} from 'react-bootstrap';
 import './ImageDetail.css';
 import toastr from 'toastr';
 import { times } from 'lodash';
@@ -162,6 +164,7 @@ class ImageDetail extends Component {
 
                   {buttonDisabled ? 'sending..' : 'Send'}
                 </Button>
+
               </Modal.Footer>
             </Modal>
           </div>

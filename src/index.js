@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 // import 'web3'
 import App from './App';

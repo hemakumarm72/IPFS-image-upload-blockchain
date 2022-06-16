@@ -1,0 +1,26 @@
+{
+    {
+        "otpId": "5116862e-bdb0-43ba-b65b-9524b9f20f64",
+        "otp": "8591",
+        "fcChannel": 12,
+        "platformType": "WEB",
+        "assignedClientId": "",
+        "visitId": "",
+        "increaseTokenSession": true
+    },
+
+POST /api/v2/identity/users/mobileonly/email/generate HTTP/1.1
+
+
+  
+    {
+        "email": "softwaretech12@gmail.com",
+        "token": "uE7hVQspD47b02A-fZuobHDU8E8wfu5Qr-2ZV9q0s6f1cLqVnrJ9YijpIm_gzFP_LViZLlko91B4rjQpuzw81KE6SwYPcxWI9Gz04muOA2MLwYn1AUlNJLgTKN4JmI8l",
+        "fcChannel": 12,
+        "firstName": "hema",
+        "lastName": "kumar",
+        "action": "ACCEPTED",
+        "policyId": 93995,
+        "entityId": "VjAxIzBiYmJiN2NkLWQ3YzMtNDU4Yy1iZjZjLWI1Yjc5OWUyZjRkZA"
+    }
+}

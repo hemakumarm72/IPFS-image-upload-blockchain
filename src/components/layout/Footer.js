@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Footer.css';
 
-export default function name() {
+export default function Footer() {
   return (
     <footer className="footer text-muted">
       <div className="container">

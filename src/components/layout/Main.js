@@ -6,7 +6,7 @@ import { web3Connect } from '../../actions/web3Actions';
 import Spinner from '../common/Spinner';
 import Setup from './Setup';
 
-class Layout extends Component {
+class Main extends Component {
   componentDidMount() {
     this.props.web3Connect();
   }
@@ -52,4 +52,4 @@ const mapStateToProps = (state) => ({
   web3: state.web3,
 });
 
-export default withRouter(connect(mapStateToProps, { web3Connect })(Layout));
+export default withRouter(connect(mapStateToProps, { web3Connect })(Main));
